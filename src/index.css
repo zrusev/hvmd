@@ -1,0 +1,45 @@
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body, table, form, select, option, input, textarea {
+  font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  font-weight: normal;
+}
+
+p, ul, ol {
+  padding-bottom: 1.5em;
+}
+
+ul, ol {
+  padding-left: 2em;
+}
+
+ul ul, ol ul, ul ol, ol ol {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+blockquote {
+  padding: 1rem;
+  font-style: italic;
+  text-align: right;
+  opacity: 0.5; 
+}
+
+blockquote:before {
+  display: inline-block;
+  content: '\2014';
+  padding-right: 0.5em;
+}
