@@ -9,7 +9,7 @@ export class Slug extends React.PureComponent {
       to = { opacity: 1, transform: 'translate3d(0,0px,0)' },
       ...rest
     } = this.props;
-
+debugger;
     const result = React.Children.map(children, child => styles => {
       const Component = animated[child.type] || animated(child.type)
       const props = {

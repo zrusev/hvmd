@@ -4,14 +4,14 @@ import 'antd/dist/antd.css';
 import data from './data';
 import { config } from 'react-spring/renderprops';
 import { Slug, Fade } from './Primitives';
-import { Icon } from 'antd';
+import { CloseOutlined } from '@ant-design/icons';
 import Grid from './Grid';
 import NavBar from './NavBar';
 
 class Cell extends Component {
   render() {
     const { toggle, name, description, css, cover, frame, active } = this.props
-    const srcPattern = /(?<=src=").*?(?=["])/;
+    const srcPattern = /(src=")(.*?)(">)/gm;
     const srcPlayer = srcPattern.exec(frame);
 
     return (
@@ -25,20 +25,19 @@ class Cell extends Component {
               <div className="player-wrapper">
                 <iframe 
                   className="player"
-                  src={srcPlayer}
+                  src={srcPlayer[2]}
                   title={name} 
                   scrolling="no"
-                  frameborder="no"
+                  frameBorder="no"
                   allow="autoplay" 
                 >
                 </iframe>
               </div>
-
               <div className="close">
-                <Icon
-                  type="close"
-                  style={{ cursor: 'pointer' }}
-                  onClick={toggle}
+                <CloseOutlined 
+                    type="close"
+                    style={{ cursor: 'pointer' }}
+                    onClick={toggle}
                 />
               </div>
               <h1>{name}</h1>

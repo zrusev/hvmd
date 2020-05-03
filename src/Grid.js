@@ -53,7 +53,6 @@ export default class Grid extends React.Component {
         lastOpen: state.open,
         open: state.open === key ? undefined : key,
       }),
-      console.log(key),
       () => (this.clicked = true)
     )
 
@@ -96,7 +95,7 @@ export default class Grid extends React.Component {
       lockScroll,
       ...rest
     } = this.props;
-
+debugger;
     let { lastOpen, open, width } = this.state;
     let column = 0;
     let columnHeights = new Array(columns).fill(0);
